@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Image slider</title>
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+</head>
+<body> 
+
+    <h1>Image Slider - drag and drop functionality</h1>
+      
+    <div class="height"></div><br>
+      
+    <div id = "Image">
+        <div id="image1" class = "ImageClass">
+            <img src="https://img.freepik.com/free-vector/business-team-brainstorm-idea-lightbulb-from-jigsaw-working-team-collaboration-enterprise-cooperation-colleagues-mutual-assistance-concept-pinkish-coral-bluevector-isolated-illustration_335657-1651.jpg?w=2000" alt="" width="200" height="200">
+        </div>
+          
+        <div id="image2" class = "ImageClass">
+            <img src="https://img.freepik.com/premium-vector/futuristic-light-red-blue-gaming-header-social-media-banner-template_136469-1321.jpg?w=2000" alt="" width="200" height="200">
+        </div>
+          
+        <div id="image3" class = "ImageClass">
+            <img src="https://i.ytimg.com/vi/GsyNmH57cRU/maxresdefault.jpg" alt="" width="200" height="200">
+        </div>
+          
+        <div id="image4" class = "ImageClass">
+            <img src="https://img.freepik.com/free-vector/couple-professionals-analyzing-graphs_74855-4393.jpg?w=2000" alt="" width="200" height="200">
+        </div>
+          
+        <div id="image5" class = "ImageClass">
+            <img src="https://img.freepik.com/premium-vector/fruits-berries-banner-vector-illustration-compositions-pitaya-pomegranate-raspberries-strawberries-grapes-currants-blueberries-lemon-peach-apple-orange-watermelon-avocado_202271-2173.jpg?w=2000" alt="" width="200" height="200">
+        </div>
+          
+        <div id="image6" class = "ImageClass">
+            <img src="https://skift.com/wp-content/uploads/2022/06/GettyImages-1208049833-scaled-e1654782377122.jpg" alt="" width="200" height="200">
+        </div>
+    </div>
+   
+<script>
+    $(function() {
+        $("#Image").sortable({
+            update: function(event, ui) {
+                    GetId();
+                } //end update         
+        });
+    });
+  
+    function GetId() {
+        var values = [];
+        $('.ImageClass').each(function(index) {
+            values.push($(this).attr("id")
+                        .replace("imageNo", ""));
+        });
+    } 
+</script>
+
+</body>
+</html>
